@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "Agriconomy",
+    "slug": "Agriconomy",
+    "scheme": "agriconomy",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "package": "com.app.agriconomy",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "bundleIdentifier": "com.app.agriconomy"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "googleServicesFile": "./google-services.json",
+      "package": "com.app.agriconomy"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "package": "com.app.agriconomy"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "65ab2ff7-b074-436d-9a67-df5ed93b072e"
+      }
+    }
+  }
+}
