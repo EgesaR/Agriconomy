@@ -1,23 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
-import { firebaseAuth } from "../../firebaseConfig";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import tw from "twrnc";
-import { router } from "expo-router";
 import { AppwriteContext } from "../appwrite/AppwriteContext";
-import {
-  Avatar,
-  Card,
-  FAB,
-  IconButton,
-  Snackbar,
-  Button,
-  Title,
-  Paragraph,
-  ProgressBar,
-  MD3Colors,
-  Subheading,
-} from "react-native-paper";
-import TodayProgressCard from "../../components/TodayProgressCard";
+import { Avatar, IconButton, Button, Title } from "react-native-paper";
 import HomeProgressTodayCard from "../../components/HomeProgressTodayCard";
 import TrendingCourseCard from "../../components/TrendingCourseCard";
 
@@ -27,66 +12,37 @@ type UserObj = {
 };
 
 const Home = () => {
-  const { appwrite, setIsLoggedIn } = useContext(AppwriteContext);
-  const [visibleLogoutSnackbar, setVisibleLogoutSnackbar] = useState(false);
-  const [userData, setUserData] = useState<UserObj>();
-
-  const onDismissSnackBar = () => setVisibleLogoutSnackbar(false);
-
-  const handleLogout = () => {
-    appwrite.logout().then(() => {
-      setIsLoggedIn(false);
-      setVisibleLogoutSnackbar(true);
-    });
-  };
-
-  useEffect(() => {
-    appwrite.getCurrentUser().then((response) => {
-      if (response) {
-        const user: UserObj = {
-          name: response.name,
-          email: response.email,
-        };
-        setUserData(user);
-      }
-    });
-  }, [appwrite]);
-  const logo = {
-    uri: 'https://reactnative.dev/img/tiny_logo.png',
-    width: 64,
-    height: 64,
-  };
   return (
     <View style={tw`py-3 px-2 h-full`}>
       <View style={tw`flex-row items-center`}>
         <IconButton icon={"menu"} />
         <Avatar.Text size={42.5} label="XD" style={tw`ml-auto`} />
       </View>
-      <View style={tw`px-2`}>
-        <Text style={tw`font-semibold text-[1.5rem]`}>Hello</Text>
+      <View style={tw`px-2 mt-2 mb-5`}>
+        <Text style={tw`text-[1.5rem]`}>Good morning,</Text>
         <Text style={tw`font-semibold text-[1.5rem]`}>Egesa Raymond</Text>
       </View>
 
       <ScrollView>
-        <View >
-          <TodayProgressCard />
+        <View>
           <Text style={tw`font-bold text-[1.4rem]`}>Course Progress</Text>
           <HomeProgressTodayCard />
 
-          <View>
-            <View>
+          <View style={tw`mt-8`}>
+            <View style={tw`flex-row justify-between items-center mt-1`}>
               <Title>Trending Courses</Title>
               <Button>See all</Button>
-              <View>
-                <ScrollView>
-                  <TrendingCourseCard />
-                </ScrollView>
-              </View>
             </View>
+            <ScrollView horizontal={true} style={tw`pl-2`}>
+              <TrendingCourseCard />
+              <TrendingCourseCard />
+              <TrendingCourseCard />
+              <TrendingCourseCard />
+              <TrendingCourseCard />
+            </ScrollView>
           </View>
         </View>
       </ScrollView>
-      
     </View>
   );
 };

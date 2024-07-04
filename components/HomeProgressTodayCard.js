@@ -5,7 +5,7 @@ import tw from "twrnc"
 
 const HomeProgressTodayCard = () => {
   return (
-    <View style={tw`py-4 px-2 flex-row rounded-2xl bg-[#fff] gap-3 h-48 mt-3`}>
+    <View style={tw`py-4 px-2 flex-row rounded-2xl bg-[#fff] gap-3 h-46 mt-3`}>
       <View style={tw`flex-0.7`}>
         <Card.Cover
           source={{ uri: "https://picsum.photos/300" }}
