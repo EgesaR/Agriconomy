@@ -1,0 +1,30 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [
+    {
+      "command": "curl -fsSL https://bun.sh/install | bash",
+      "name": "curl -fsSL https://bun.sh/install | bash"
+    },
+    {
+      "command": "source /root/.bashrc ",
+      "name": "source /root/.bashrc "
+    },
+    {
+      "command": "bun --help",
+      "name": "bun --help"
+    },
+    {
+      "command": "bun install",
+      "name": "bun install"
+    }
+  ],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "bun install": {
+      "name": "bun install",
+      "command": "bun web",
+      "runAtStart": true
+    }
+  }
+}
