@@ -1,48 +1,21 @@
-<<<<<<< HEAD
-.DS_Store
-.env
+# Node modules
 /node_modules/
 
-# React Router
+# React Router build
 /.react-router/
 /build/
-=======
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
-node_modules/
+# Env files
+.env
+.env*.local
 
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
+# MacOS
+.DS_Store
 
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+# TypeScript
+*.tsbuildinfo
 
-# Metro
-.metro-health-check*
-
-# debug
+# Debug logs
 npm-debug.*
 yarn-debug.*
 yarn-error.*
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-
-# typescript
-*.tsbuildinfo
-
-app-example
->>>>>>> db33e7d48c84d62245f5bf19c174c14e30d3d504
